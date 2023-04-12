@@ -1,7 +1,11 @@
+
+<%@page import="com.jscompany.test.MemberDAO"%>
 <%@page import="java.lang.reflect.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.jscompany.test.MemberDAO"%>
+<jsp:useBean id="dto" class="com.jscompany.test.MemberDTO"></jsp:useBean>
+<jsp:useBean id="dao" class="com.jscompany.test.MemberDAO"></jsp:useBean>
+<jsp:setProperty property="*" name="dto"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +14,19 @@
 </head>
 <body>
 	<%
-		String mid = request.getParameter("userID");
-		String mpw = request.getParameter("userPW");
-		String memail = request.getParameter("userMAIL");
+		//String mid = request.getParameter("userID");
+		//String mpw = request.getParameter("userPW");
+		//String memail = request.getParameter("userMAIL");
 		
-		MemberDAO dao = new MemberDAO();
 		
-		int dbFlag = dao.insertMember(mid, mpw, memail);
+		//MemberDTO dto= new MemberDTO();
+		
+		//dto.setId(mid);
+		//dto.setPass(mpw);
+		//dto.setEmail(memail);
+		//MemberDAO dao = new MemberDAO();
+		
+		int dbFlag = dao.insertMember(dto);
 		
 		if(dbFlag==1){
 			%>
