@@ -32,6 +32,7 @@
 			%>
 			<script type="text/javascript">
 				alert('회원가입을 축하합니다.');
+				history.back();
 			</script>
 			<%
 		} else{
